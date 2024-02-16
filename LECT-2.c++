@@ -56,24 +56,143 @@ int main()
 // }
 
 // pattern 1
-int x, y;
-cout << "enter value of length";
-cin >> x;
-cout << "enter value of height";
-cin >> y;
-int i = 0;
-int j = 0;
-while(i<y){
-    // cout << "enter";
-    while(j<x){
-        cout << i;
-        // cout << j;
-        j++;
-    }
-    cout << endl;
-    //  cout << i;
-    i++;
-    j = 0;
+
+
+// int x, y;
+// cout << "enter value of length";
+// cin >> x;
+// cout << "enter value of height";
+// cin >> y;
+// int i = 0;
+// int j = 0;
+// while(i<y){
+//     // cout << "enter";
+//     while(j<x){
+//         cout <<x-j;
+//         // cout << j;
+//         j++;
+//     }
+//     cout << endl;
+//     //  cout << i;
+//     i++;
+//     j = 0;
+// }
+
+// pattern 2
+
+
+// int x, y;
+// cout << "enter value of length";
+// cin >> x;
+// cout << "enter value of height";
+// cin >> y;
+// int i = 1;
+// int j = 1;
+// while(i<y){
+//     // cout << "enter";
+//     while(j<x){
+//         cout <<j;
+//         // cout << j;
+//         j++;
+//     }
+//     cout << endl;
+//     //  cout << i;
+//     i++;
+//     j = 1;
+// }
+
+// pattern 3
+
+
+// int x, y;
+// cout << "enter value of length";
+// cin >> x;
+// cout << "enter value of height";
+// cin >> y;
+// int i = 1;
+// int j = 1;
+// int z = x;
+// while(i<=y){
+   
+//     while(j<=z){
+//         cout <<j;
+       
+//         j++;
+//     }
+//     cout << endl;
+//     //  cout << i;
+//     z = z+x;
+//     i++;
+ 
+// }
+
+// alternative
+// int x, y;
+// cout << "enter value of length";
+// cin >> x;
+// cout << "enter value of height";
+// cin >> y;
+// int i = 1;
+
+//   int z = 1;
+// while(i<=y){
+//     int j = 1;
+  
+//     while(j<=x){
+//         cout <<z;
+//         z++;
+
+//         j++;
+//     }
+//     cout << endl;
+//     //  cout << i;
+
+//     i++;
+ 
+// }
+
+// pattern 4
+
+// int x, y;
+// // cout << "enter value of length";
+// // cin >> x;
+// cout << "enter value of height";
+// cin >> y;
+// int i = 1;
+// x = 1;
+
+// while(i<=y){
+//     int j = 1;
+  
+//     while(j<=i){
+//         cout <<x;
+//         x++;
+
+//         j++;
+//     }
+//     cout << endl;
+//     //  cout << i;
+//     x--;
+
+//     i++;
+ 
+// }
+
+// pattern 5
+
+
+int n;
+cin >> n;
+int i = 1;
+while(i<=n){
+    int j = 1;
+
+while(j<=i){
+    cout << i;
+    j++;
+}
+cout << endl;
+i++;
 }
 }
 
