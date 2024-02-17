@@ -181,18 +181,100 @@ int main()
 // pattern 5
 
 
-int n;
-cin >> n;
-int i = 1;
-while(i<=n){
-    int j = 1;
+// int n;
+// cout << "enter no : ";
+// cin >> n;
+// int i = 1;
 
-while(j<=i){
-    cout << i;
-    j++;
-}
-cout << endl;
-i++;
-}
+// while(i<=n){
+  
+//     int j = 1;
+//     while(j<=i){
+//         cout << i+j-1;
+
+       
+//         j=j+1;
+//     }
+//     cout << endl;
+//       i++;
+
+// }
+
+//   note: in pattern ques first make the pattern create a matrix like structure for i and j then try to  observe the values come at particular i and j and find the formula , no need to change anything in code just find the right formula and u r set
+     
+//    pattern 6
+
+// int n;
+// cout << "enter vale of n  :  ";
+// cin >> n;
+// int i = 1;
+// char ch = 'A';
+// while(i<=n){
+//     int j = 1;
+    
+//     while(j<=n){
+//         cout << ch;
+//         j++;
+
+//     }
+//     cout << endl;
+//     i++;
+//     ch=ch+1;
+
+// }
+
+// pattern 7
+
+// int n;
+// cout << "enter vale of n  :  ";
+// cin >> n;
+// int i = 1;
+// char ch = 'A';
+// while(i<=n){
+//     int j = 1;
+    
+//     while(j<=n){
+//         cout << ch;
+//         j++;
+//         ch=ch+1;
+
+//     }
+//     cout << endl;
+//     i++;
+    
+
+// }
+
+// pattern 8
+
+
+// int n;
+// cout << "enter value of n  :  ";
+// cin >> n;
+// int i = 1;
+
+// while(i<=n){
+//     int j = 1;
+//        char ch = 'A'+i-1;
+//     while(j<=i){
+     
+//         cout << ch;
+//         j++;
+//           ch++;
+     
+
+//     }
+//     cout << endl;
+//     i++;
+//     ch++;
+//     // note: formula could be A+i+j-2
+
+// }
+
+// pattern 9
+
+
+
+
 }
 
