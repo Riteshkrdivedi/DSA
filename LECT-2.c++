@@ -342,7 +342,7 @@ int main()
 //     }
     
 // }
-// pattern 12
+// pattern 12  hardest (final)
 
 int n;
 cout << "enetr  a no. : ";
@@ -353,17 +353,17 @@ while(i<=n){
     int j = 1;
     int start = n - i + 1;
     int end = n + i;
+    int s = n;
     while(j<=n+n){
+    
         
 
-
-
-          if (j<=start)
+        if (j <= start)
         {
             cout << j;
         }
         
-        if (j>=n-i+2 && j<=n+i-1)
+        if(j>=n-i+2 && j<=n+i-1)
         {
             cout << "*";
         }
@@ -371,10 +371,11 @@ while(i<=n){
      
         if (j>=end && j<=n+n)
         {
-            cout <<;
+          
+            cout <<s+n;
         }
 
-     
+        s=s-1;
         j++;
     }
 
