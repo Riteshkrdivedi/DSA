@@ -273,8 +273,115 @@ int main()
 
 // pattern 9
 
+// int n;
+// cout << "enter a no.: ";
+// cin >> n;
+// int i = 1;
+
+// while (i<=n)
+
+// {
+//     int j = 1;
+//     while (j<=i)
+//     {char ch = n-i+'A'+j-1;
+//         cout << (ch);
+//         j++;
+
+//     }
+//     cout << endl;
+//     i++;
+
+// }
+
+// pattern 10
+
+// int n;
+// cout << "enter  a no : ";
+// cin >> n;
+// int i=1;
+// while (i<=n)
+// {
+//     int j = 1;
+//     while (j<=n)
+//     {
+//         if (j<i)    //  j<i  for another pattern  j<=n-i for this pattern
+//         {
+//             cout << " ";
+//         }
+//         else{
+//             cout << "*";  //i for another patern
+//         }
+//         j++;
+//     }
+//     cout << endl;
+//     i++;
+// }
 
 
+// pattern 11
+
+// int n;
+// cout<<"enter  a no  :  ";
+// cin >> n;
+// int i=1;
+// while (i<=n)
+// {
+//     int j = 1;
+//     while (j<=n+n-1)
+//     {
+//         if (j=n)
+//         {
+//             cout << i;
+//         }
+//         if (j<i)
+//         {
+//             /* code */
+//         }
+        
+        
+//     }
+    
+// }
+// pattern 12
+
+int n;
+cout << "enetr  a no. : ";
+
+cin >> n;
+int i = 1;
+while(i<=n){
+    int j = 1;
+    int start = n - i + 1;
+    int end = n + i;
+    while(j<=n+n){
+        
+
+
+
+          if (j<=start)
+        {
+            cout << j;
+        }
+        
+        if (j>=n-i+2 && j<=n+i-1)
+        {
+            cout << "*";
+        }
+
+     
+        if (j>=end && j<=n+n)
+        {
+            cout <<;
+        }
+
+     
+        j++;
+    }
+
+
+   
+    cout<<endl;
+    i++;
 
 }
-
+}
