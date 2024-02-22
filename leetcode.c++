@@ -37,18 +37,41 @@ int main(){
 
 // to reverse a no.
 
-    int n;
-    cout << "enter the no : ";
-    cin>>n;
-    int reverse = 0;
+    // int n;
+    // cout << "enter the no : ";
+    // cin>>n;
+    // int reverse = 0;
 
+    // while (n!=0)
+    // {
+    //     int last=n%10;
+    //     reverse = reverse * 10 + last;       //formula for same flow    same=a*10^i +same
+    //     n = n / 10;
+    // }
+    // cout << "reverse no. is  : " << reverse;
+
+    
+
+    // binary to decimal converter
+
+    int n;
+    cout<<"enter binary no. : ";
+    cin>>n;
+    int digit;
+    int i=0;
+    int ans = 0;
     while (n!=0)
     {
-        int last=n%10;
-        reverse = reverse * 10 + last;
-        n = n / 10;
-    }
-    cout << "reverse no. is  : " << reverse;
+        digit = n % 10;
+        if (digit==1)
+        {
+            ans = ans + pow(2, i);
+        }
+        i++;
+        n = n /10;
+       
+        }
+        cout << "decimal no. is : " << ans;
 }
 
   
