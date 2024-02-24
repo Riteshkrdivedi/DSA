@@ -142,53 +142,108 @@ int main(){
 
     // wrong approach
 
-    cout << "enter  a no. :";
-    int n;
-    cin >> n;
+    // cout << "enter  a no. :";
+    // int n;
+    // cin >> n;
 
-    int i = 0;
-    int ans = 0;
-    while (n != 0)
-    {
-        if (n & 1)
-        {
-            ans = ans;
-        }
-        else
-        {
-            ans = ((1 * pow(10, i)) + ans);
-        }
-        cout<<"ans : " << ans << endl;
-        i++;
-        n = n >> 1;
-        }
-        i=0;
+    // int i = 0;
+    // int ans = 0;
+    // while (n != 0)
+    // {
+    //     if (n & 1)
+    //     {
+    //         ans = ans;
+    //     }
+    //     else
+    //     {
+    //         ans = ((1 * pow(10, i)) + ans);
+    //     }
+    //     cout<<"ans : " << ans << endl;
+    //     i++;
+    //     n = n >> 1;
+    //     }
+    //     i=0;
         
-        int sol=0;
-        while(ans!=0){
-            if(ans % 10){
-                sol=pow(2,i)+sol;
-                cout <<"sol : "<< sol<<endl;
-            }
-            i++;
-            ans=ans/10;
-        }
-        cout << sol;
+    //     int sol=0;
+    //     while(ans!=0){
+    //         if(ans % 10){
+    //             sol=pow(2,i)+sol;
+    //             cout <<"sol : "<< sol<<endl;
+    //         }
+    //         i++;
+    //         ans=ans/10;
+    //     }
+    //     cout << sol;
 
-        // right approach
+    //     // right approach
 
-          int m =n;
-    int mask=0;     //first make a mask or filter which can do & with each bit 
-    if (n==0){
-        return 1;     // to create this mask create  a loop as no. of times as value is entered and left shift mask and add 1 means do or operation 
-    }                   //  with each bit
-    while(m!=0)
+    //       int m =n;
+    // int mask=0;     //first make a mask or filter which can do & with each bit 
+    // if (n==0){
+    //     return 1;     // to create this mask create  a loop as no. of times as value is entered and left shift mask and add 1 means do or operation 
+    // }                   //  with each bit
+    // while(m!=0)
+    // {
+    //     mask=(mask<<1)|1;
+    //     m=m>>1;
+    // }
+    //  int ans=(~n)&mask;
+    // return ans;
+
+    // love babbr ki practice
+
+    // int a,b;
+    // cout << "eneter value of a  " ;
+    // cin >> a;
+    //  cout << "eneter value of b  " ;
+    // cin >> b;
+    // char ch;
+    // cout << "enter operation as +,-,*,/  " ;
+    // cin >> ch;
+
+
+    // switch (ch)
+    // {
+    // case '+' :
+    //     cout << "solution is :" << a + b << endl;
+    //     break;
+    // case '-' :
+    //     cout << "solution is :" << a - b << endl;
+    //     break;
+    // case '*' :
+    //     cout << "solution is :" << a * b << endl;
+    //     break;
+    // case '/' :
+    //     cout << "solution is :" << a / b << endl;
+    //     break;
+    
+    // default:
+    //     cout << "dhang t daaal le " << endl;
+    //     break;
+    // }
+
+    int n;
+    cout << "enter rupees  :";
+    cin >> n;
+    cout << endl;
+    cout << "no. of hundred notes :" << n / 100<<endl;
+    int a = n % 100;
+    if (a>=50)
     {
-        mask=(mask<<1)|1;
-        m=m>>1;
+        cout << "no. of 50 notes : " << a / 50<<endl;
+
     }
-     int ans=(~n)&mask;
-    return ans;
+    else if (a<20)
+    {
+       
+    cout << "no. od 1 rs notes :" << a<<endl;
+        
+    }
+    else{
+        cout << "no. of 20 notes : " << a / 20<<endl;
+    }
+
+    
 }
 
   
