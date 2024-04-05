@@ -1,7 +1,58 @@
 #include <iostream>
 #include<math.h>
 using namespace std;
+
+
+
+void AP(){
+   int a, n, d;
+   cout << "enter first term : ";
+   cin >> a;
+
+   cout << "enter  difference : ";
+   cin >> d;
+
+   cout << "which term you want : ";
+   cin >> n;
+
+   cout << "your answer is : " << a + (n - 1) * d;
+}
+
+int totalbits(int a , int b){
+   int n1 = 0;
+   int n2 = 0;
+   for (int i = 0; i <32; i++)
+   {
+      
+      if (a&1)
+      {
+         n1=n1+1;
+         // cout << "one more for first" << endl;
+      }
+      if (b&1)
+      {
+         n2=n2+1;
+         // cout << "one more for second" << endl;
+      }
+      a = a >> 1;
+      b = b >> 1;
+      
+   }
+    cout << "bits for one : "<< n1<<endl;
+    cout << "bits for two : "<< n2<<endl;
+   return  n1 + n2;
+   
+}
+
+
+
+
+
+
+
+
 int main(){
+   
     // class Solution(object){}
     // def subtractProductAndSum(self, n):
     //    int product=1;
@@ -221,29 +272,61 @@ int main(){
     //     cout << "dhang t daaal le " << endl;
     //     break;
     // }
+/*     int n;
+     cout << "enter rupees  :";
+     cin >> n;
+  
+    int h = n / 100;
+     cout << "no. of hundred notes :" << h<<endl;
+     int a =n-(h*100) ;
 
-    int n;
-    cout << "enter rupees  :";
-    cin >> n;
-    cout << endl;
-    cout << "no. of hundred notes :" << n / 100<<endl;
-    int a = n % 100;
-    if (a>=50)
-    {
-        cout << "no. of 50 notes : " << a / 50<<endl;
+     int b = a / 50;
+     cout << "no. of 50 notes : " << b << endl;
 
-    }
-    else if (a<20)
-    {
-       
-    cout << "no. od 1 rs notes :" << a<<endl;
-        
-    }
-    else{
-        cout << "no. of 20 notes : " << a / 20<<endl;
-    }
+     int c = a - (b * 50);
+     int d = c / 20;
+     cout << "no. of 20 rs notes :" << d<<endl;
+     int e = c - (d * 20);
 
+
+     cout << "no. of 1 notes : " <<e << endl;*/
+
+
+     // using switch case
+
+     /*
+
+      int n;
+          cout << "enter rupees  :";
+          cin >> n;
+
+          switch (n)
+          {
+          case  :
+
+             break;
+
+          default:
+             break;
+          }
+
+          */
+
+// arithmetic progression  function
+   //  AP();
+
+
+   //  total no. of 1 in bits of 2 or more no.c
+    int a, b;
+    cout << "enter number 1 :";
+    cin >> a;
+ 
+    cout << "enter number 2 :";
+    cin >> b;
+ 
     
+    int ans = totalbits(a , b);
+    cout<<"total bits are : "<< ans ;
 }
 
   
