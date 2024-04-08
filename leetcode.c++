@@ -317,6 +317,7 @@ int main(){
 
 
    //  total no. of 1 in bits of 2 or more no.c
+   /*
     int a, b;
     cout << "enter number 1 :";
     cin >> a;
@@ -326,7 +327,30 @@ int main(){
  
     
     int ans = totalbits(a , b);
-    cout<<"total bits are : "<< ans ;
+    cout<<"total bits are : "<< ans ;*/
+
+    int m[]={-1,5,-2,3,-5,0};
+    int count = 6;
+    int res[100]={0};
+
+    for (int i = 0; i < count; i++)
+    {
+      for (int j = i; j<6; j++)
+      {
+         for (int k = j; k < 6; k++)
+         {
+            if ((m[i]+m[j]+m[k]==0) && ((i!=j)&&(j!=k)&&(i!=k)))
+            {
+               cout << m[i] << "," << m[j] << "," << m[k];
+               res[0] = {m[i], m[j], m[k]};
+            }
+            
+         }
+         
+      }
+      
+    }
+    
 }
 
   
