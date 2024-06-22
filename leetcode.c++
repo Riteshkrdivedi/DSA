@@ -1,6 +1,7 @@
 #include <iostream>
 #include<math.h>
 using namespace std;
+#include <vector>
 
 
 
@@ -44,12 +45,23 @@ int totalbits(int a , int b){
    
 }
 
+void print(int num[],int count){
+   for (int i = 0; i < count; i++)
+   {
+      cout << num[i];
+      /* code */
+   }}
 
+   void printV(vector<int> num)
+   {
 
-
-
-
-
+      int count = sizeof(num) / 4;
+      for (int i = 0; i < count; i++)
+      {
+         cout << num[i];
+         /* code */
+   }
+   }
 
 int main(){
    
@@ -317,7 +329,7 @@ int main(){
 
 
    //  total no. of 1 in bits of 2 or more no.c
-   /*
+    /*  
     int a, b;
     cout << "enter number 1 :";
     cin >> a;
@@ -327,11 +339,12 @@ int main(){
  
     
     int ans = totalbits(a , b);
-    cout<<"total bits are : "<< ans ;*/
+    cout<<"total bits are : "<< ans ;
 
     int m[]={-1,5,-2,3,-5,0};
     int count = 6;
     int res[100]={0};
+    
 
     for (int i = 0; i < count; i++)
     {
@@ -342,15 +355,141 @@ int main(){
             if ((m[i]+m[j]+m[k]==0) && ((i!=j)&&(j!=k)&&(i!=k)))
             {
                cout << m[i] << "," << m[j] << "," << m[k];
-               res[0] = {m[i], m[j], m[k]};
+               // res[0] = {m[i], m[j], m[k]};
             }
             
          }
          
       }
       
-    }
-    
-}
+    } 
 
-  
+
+   //  ques 442
+
+   int nums[]={2,3,1,4,1,5,3,7};
+   int count = 8;
+   vector<int> sol;
+   int inp = 0;
+   for (int i = 0; i < count; i++)
+   {
+      for (int j = i; j < count; j++)
+      {
+         if (nums[i]==nums[j])
+         {
+            sol[inp] = nums[i];
+            inp++;
+         }
+         
+      }
+      
+   }
+   // int length = (sizeof(sol)) / 4;
+   cout << "solution array is  : " ;
+   printV(sol);
+*/
+
+// ques 1089
+   // int arr[6] = {1, 3, 0, 2, 5, 3};
+   // int count = sizeof(arr) / 4;
+   // for (int i = 0; i < count; i++)
+   // {
+   //    if (arr[i] == 0)
+   //    {
+   //       arr[i + 1] = {0};
+   //       i = i + 2;
+   //    }
+
+   //      }
+   //      print(arr, 6);
+
+
+      //   cout<<"enter  even word   :   ";
+      //   string s;
+
+      //   cin >>s ;
+      //   int A = 0;
+      //   int B = 0;
+      //   int length = s.length();
+      //   for (int i = 0; i < (length / 2);i++){
+      //    if (s[i]=='a'|| s[i]=='e'|| s[i]=='i'|| s[i]=='o'|| s[i]=='u'|| s[i]=='A'|| s[i]=='E'|| s[i]=='I'|| s[i]=='O'|| s[i]=='U'){
+      //       A++;
+      //    }
+      //   }
+      //   for (int i = (length / 2); i <length ;i++){
+      //    if (s[i]=='a'|| s[i]=='e'|| s[i]=='i'|| s[i]=='o'|| s[i]=='u'|| s[i]=='A'|| s[i]=='E'|| s[i]=='I'|| s[i]=='O'|| s[i]=='U'){
+      //       B++;
+      //    }
+      //   }
+      //   if (A==B){
+      //      cout << "TRUEEEE";
+      //   }
+
+
+        cout<<"enter big   word   :   ";
+        string big;
+        cin >>big ;
+        cout<<"enter small   word   :   ";
+        string small;
+        cin >>small ;
+       
+        int length = big.length();
+        int slen = small.length();
+        int i = 0;
+        while( i<length)
+        {
+         if( big[i]==small[0])
+           {int a = i;
+           string newword;
+           string next;
+           for (int j = 0; j < slen; j++)
+           {
+              next = big[i];
+              newword += next;
+              i++;
+        }
+        i = a;
+
+        cout << newword;
+        if (newword == small)
+        {
+           cout << i <<"        " ;
+           break;
+            }
+            cout << "clear";}
+           i++;
+        }
+        
+}  //   a = big[i];
+         //   b = big[i + 1];
+         //   c= big[i + 2];
+         //   newword = a+b+c;
+
+     /* int length = haystack.length();
+        int slen = needle.length();
+       if (slen>length){return -1;}
+        for (int i = 0; i < length; i++)
+        {
+           int a = i;
+           string newword;
+           string next;
+           for (int j = 0; j < slen; j++)
+           {
+              next = haystack[i];
+              newword += next;
+              i++;
+        }
+        i = a;
+
+     
+        if (newword == needle)
+        {
+           return i ;
+            }
+            
+            
+           
+          
+        } 
+        return -1;
+        */

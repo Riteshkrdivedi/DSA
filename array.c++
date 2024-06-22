@@ -61,7 +61,7 @@ for (int i = 0; i < n; i++)
     rev[i] = array[(n - 1) - i];
 }
 hoja(rev, 5);
-*/
+
 
 // swap by swap function
 
@@ -78,5 +78,44 @@ while (start<=end)
 }
 
 hoja(array, n);
+
+
+// swap alternate 
+int fruits[] = {2, 4, 0, 4, 5, 6,4};
+int n = 7;
+for (int i = 0; i < n; i=i+2)
+{
+    if ((i+1)<n)
+    {
+       swap(fruits[i], fruits[i + 1]);
+    }
+   
+}
+
+hoja(fruits, 7);
+*/
+
+// to find unique no.
+
+int num[] = {3, 4, 5, 2, 4, 3, 5, 7, 2, 9, 1};
+int count = 11;
+
+for (int i = 0; i < count; i++)
+{int ans = 0;
+    for (int j=0; j < count; j++)
+    {
+        if (num[i]!=num[j])
+        {
+            ans++;
+        }
+       
+        
+    }
+     if (ans!=(count-2))
+        {
+            cout << " ans is : " << num[i]<<endl;
+        }
+}
+
 }
 
