@@ -512,14 +512,13 @@ int main()
 
    // ques 1980
 
-   int nums[] = {1, 2, 4, 5, 6, 7};
-   // cout << "length is       :   ";
-   // cout << sizeof(nums) / sizeof(int) << "        ans is :";
-   const int n = sizeof(nums) / sizeof(nums[0]); // Assuming fixed-size array
+   int nums[] = {1, 3, 5, 6, 7, 9, 11};
+
+   const int n = sizeof(nums) / sizeof(nums[0]);
 
    int start = 0;
-   int end = n - 1; // Use n - 1 for correct upper bound
-   int target = 7;
+   int end = n - 1;
+   int target = 1;
 
    while (start <= end)
    {
@@ -534,6 +533,7 @@ int main()
       {
          start = mid + 1;
       }
+
       else
       {
          end = mid - 1;
