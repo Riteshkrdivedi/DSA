@@ -507,9 +507,42 @@ int main()
       }
       flag = 0;
    }
-}
+
 */
 
    // ques 1980
 
-   string arr[] = {"11", "10", "00"};
+   int nums[] = {1, 2, 4, 5, 6, 7};
+   // cout << "length is       :   ";
+   // cout << sizeof(nums) / sizeof(int) << "        ans is :";
+   const int n = sizeof(nums) / sizeof(nums[0]); // Assuming fixed-size array
+
+   int start = 0;
+   int end = n - 1; // Use n - 1 for correct upper bound
+   int target = 7;
+
+   while (start <= end)
+   {
+      int mid = (start + end) / 2;
+
+      if (nums[mid] == target)
+      {
+         cout << "Target found at index: " << mid << endl;
+         break;
+      }
+      else if (nums[mid] < target)
+      {
+         start = mid + 1;
+      }
+      else
+      {
+         end = mid - 1;
+      }
+   }
+
+   // Handle case where target is not found
+   if (start > end)
+   {
+      cout << "Target not found in the array." << endl;
+   }
+}
