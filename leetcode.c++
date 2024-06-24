@@ -508,7 +508,7 @@ int main()
       flag = 0;
    }
 
-*/
+
 
    // ques 1980
 
@@ -545,4 +545,29 @@ int main()
    {
       cout << "Target not found in the array." << endl;
    }
+
+*/
+   // ques 201
+   cout << "start   :   ";
+   int left = 1;
+   int right = 2147483647;
+   int k = 0;
+   while ((2 ^ k) <= right)
+   {
+      if ((2 ^ k) == right)
+      {
+         return 0;
+      }
+      k++;
+   }
+   int i = 2 ^ k;
+   int ans = 0;
+   while (i <= right)
+   {
+
+      ans = ans & i;
+      i++;
+   }
+   return ans;
+   cout << "end  :   ";
 }
