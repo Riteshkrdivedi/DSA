@@ -546,7 +546,7 @@ int main()
       cout << "Target not found in the array." << endl;
    }
 
-*/
+
    // ques 201
    cout << "start   :   ";
    int left = 1;
@@ -570,4 +570,64 @@ int main()
    }
    return ans;
    cout << "end  :   ";
+
+
+
+   // ques 852
+   int start=0;
+        int end=arr.size()-1;
+        int mid=start+(end-start)/2;
+        while(start<end){
+            if(arr[mid]>arr[mid+1] && arr[mid]>arr[mid-1]){
+                return mid;
+            }
+            if(arr[mid]<arr[mid+1] ){
+                start=mid+1;
+            }
+            if( arr[mid]<arr[mid-1]){
+                end=mid ;
+
+            }
+            mid=start+(end-start)/2;
+
+        }
+        */
+   int nums[] = {2, 1, -1};
+   int s = 0;
+   int e = sizeof(nums) / sizeof(int) - 1;
+   cout << "size of array  : " << e + 1 << endl;
+   int last = sizeof(nums) / sizeof(int) - 1;
+   int mid = s + (e - s) / 2;
+   int ls = 0, rs = 0;
+   while (s <= e)
+   {
+      cout << "mid value : " << mid << endl;
+      for (int i = 0; i < mid; i++)
+      {
+         cout << "nums  :" << nums[i];
+         ls += nums[i];
+      }
+      cout << "sum of left  : " << ls << endl;
+      for (int j = mid + 1; j <= last; j++)
+      {
+         rs += nums[j];
+      }
+      cout << "sum of right  : " << rs << endl;
+      if (ls == rs)
+      {
+         cout << "pivot index is :" << mid;
+         break;
+      }
+      if (ls < rs)
+      {
+         s = mid + 1;
+      }
+      else
+      {
+         e = mid - 1;
+      }
+      mid = s + (e - s) / 2;
+      ls = 0;
+      rs = 0;
+   }
 }
