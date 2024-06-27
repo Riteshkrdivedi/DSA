@@ -591,8 +591,8 @@ int main()
             mid=start+(end-start)/2;
 
         }
-        */
-   int nums[] = {2, 1, -1};
+
+   int nums[] = {-1,-1,-1,-1,0,1};
    int s = 0;
    int e = sizeof(nums) / sizeof(int) - 1;
    cout << "size of array  : " << e + 1 << endl;
@@ -630,4 +630,116 @@ int main()
       ls = 0;
       rs = 0;
    }
+
+   // second approach for pivot
+   int nums[] = {2,1,-1};
+   int j = 1;
+   int len = sizeof(nums) / sizeof(int);
+   if (len == 1)
+   {
+      return 0;
+   }
+
+   cout << "length is " << len << endl;
+   int sum[len];
+   sum[0] = nums[0];
+   for (int i = 1; i < len; i++)
+   {
+      sum[j] = sum[j - 1] + nums[i];
+      cout << sum[j] << endl;
+      j++;
+   }
+
+   cout << "sum array  : " << sum[len - 1] << endl;
+
+// linear search
+
+   for (int i = 0; i < len - 1; i++)
+   {
+      if (sum[len - 1] == sum[0])
+      {
+         cout << "first if :" << 0;
+         break;
+      }
+      if (sum[len - 1] == sum[i] + sum[i + 1])
+      {
+         cout << "second if : " << i + 1;
+         break;
+      }
+   }
+//   binary search
+   int s = 0;
+   int e = len - 1;
+   int mid = s + (e - s) / 2;
+   while (s < e)
+   {
+      if (sum[len - 1] == sum[mid] + sum[mid + 1])
+      {
+         cout << "answer is :  " << mid + 1 << endl;
+         break;
+      }
+
+      if (sum[len - 1] < sum[mid] + sum[mid + 1])
+      {
+         e = mid;
+      }
+      if (sum[len - 1] == sum[0])
+      {
+         cout << "answer is : " << 0 << endl;
+         break;
+      }
+
+      else
+      {
+         s = mid + 1;
+      }
+      mid = s + (e - s) / 2;
+   }
+
+
+   // leetcode code
+
+
+
+
+   // class Solution
+// {
+// public:
+//    int pivotIndex(vector<int> &nums)
+//    {
+
+//       int j = 1;
+//       int len = nums.size();
+//       if (len == 1)
+//       {
+//          return 0;
+//       }
+//       int sum[len];
+//       sum[0] = nums[0];
+//       for (int i = 1; i < len; i++)
+//       {
+//          sum[j] = sum[j - 1] + nums[i];
+//          j++;
+//       }
+//       for (int i = 0; i < len - 1; i++)
+//       {
+//          if (sum[len - 1] == sum[0])
+//          {
+//             return 0;
+//          }
+//          if (sum[len - 1] == sum[i] + sum[i + 1])
+//          {
+//             return i + 1;
+//          }
+//       }
+
+//       return -1;
+//    }
+// };
+
+
+
+
+
+*/
 }
