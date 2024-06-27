@@ -741,5 +741,44 @@ int main()
 
 
 
-*/
+
+
+   // ques 69  find square root
+   int x;
+   cout << "enter no  :  ";
+   cin >> x;
+   cout << endl;
+   int s = 0;
+   int e = x;
+   int mid = s + (e - s) / 2;
+   int ans = 0;
+   while (s <= e)
+   {
+      if (mid * mid == x)
+      {
+         cout << "answer is :  " << mid << endl;
+         break;
+      }                                //   note
+      if (mid < x / mid)            //   if multiplying 2 int is so huge and out of bound then rearrage the equation as i did m*m<x   change to m<x/m
+      {
+         s = mid + 1;
+         ans = mid;
+      }
+      // if (mid * mid < x && (mid + 1) * (mid + 1) > x)
+      // {
+
+      //    cout << "nearest ans :" << mid << endl;
+      //    break;
+      // }
+
+      else
+      {
+         e = mid - 1;
+      }
+      mid = (s + e) / 2;
+   }
+   cout << "answer is :  " << ans;
+
+
+   */
 }
