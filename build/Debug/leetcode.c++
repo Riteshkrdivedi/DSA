@@ -33,3 +33,34 @@ int main()
     cout << arrayitems(nums, n) << endl;
     cout << "count is : " << j << endl;
 }
+
+// rough
+class Solution
+{
+public:
+    int removeDuplicates(vector<int> &nums)
+    {
+        int n = nums.size();
+        int count = 0;
+        for (int i = 0; i < n; i++)
+        {
+            if (nums[i] == nums[i + 1])
+            {
+
+                count++;
+                int k = i + 1;
+                for (int j = i + 1; j < n; j++)
+                {
+                    if (nums[j] != nums[i])
+                    {
+                        nums[k] = nums[j];
+                        k++;
+                    }
+                    n--;
+                }
+                i--;
+            }
+        }
+        return n - count;
+    }
+};
