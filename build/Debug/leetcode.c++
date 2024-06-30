@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 using namespace std;
 
 // array items function
@@ -16,26 +17,56 @@ int main()
 
     // two pointer method
 
-    int nums[] = {0, 1, 2, 2, 3, 0, 4, 2};
-    int val = 2;
-    int n = sizeof(nums) / sizeof(int);
-    cout << "size of array  : " << n << endl;
-    int j = 0;
-    for (int i = 0; i < n; i++)
-    {
-        if (nums[i] != val)
+    /*
+        int nums[] = {0, 1, 2, 2, 3, 0, 4, 2};
+        int val = 2;
+        int n = sizeof(nums) / sizeof(int);
+        cout << "size of array  : " << n << endl;
+        int j = 0;
+        for (int i = 0; i < n; i++)
         {
-            nums[j] = nums[i];
-            j++;
+            if (nums[i] != val)
+            {
+                nums[j] = nums[i];
+                j++;
+            }
         }
+        cout << "final answer :";
+        cout << arrayitems(nums, n) << endl;
+        cout << "count is : " << j << endl;
+
+        */
+
+    //    palindrome no
+
+    int x = 125521;
+    string y = to_string(x);
+    int size = y.size();
+    string newstr;
+    for (int i = size - 1; i >= 0; i--)
+    {
+        newstr += y[i];
     }
-    cout << "final answer :";
-    cout << arrayitems(nums, n) << endl;
-    cout << "count is : " << j << endl;
+    // int nw = stoi(newstr);
+    if (y==newstr)
+    {
+        cout << "palindrome" << endl;
+    }else{
+
+        cout << "not  palindrome" << endl;
+
+    }
+
+
+
+
+
+
+    
 }
 
 // rough
-class Solution
+/*class Solution
 {
 public:
     int removeDuplicates(vector<int> &nums)
@@ -64,3 +95,5 @@ public:
         return n - count;
     }
 };
+
+*/
