@@ -28,6 +28,10 @@ int firstoccurance(int nums[], int size, int target)
             first = mid;
             e = mid - 1;
         }
+        if (nums[mid] > target)
+        {
+            e = mid - 1;
+        }
         else
         {
             s = mid + 1;
@@ -50,6 +54,10 @@ int lastoccurance(int nums[], int size, int target)
         if (nums[mid] == target)
         {
             last = mid;
+            s = mid + 1;
+        }
+        if (nums[mid] < target)
+        {
             s = mid + 1;
         }
         else
@@ -141,7 +149,6 @@ int main()
 
 
 
-     */
 
     //    ques 34  :   first and last occurance of int in an array
 
@@ -149,6 +156,25 @@ int main()
     int len = (sizeof(arr) / sizeof(int));
     cout << "first occurance " << firstoccurance(arr, len, 2) << endl;
     cout << "last occurance " << lastoccurance(arr, len, 2) << endl;
+
+
+
+     */
+    string s = "hello";
+    int n = s.size();
+    int ans = 0;
+    int sol = 0;
+    for (int i = 1; i < n; i++)
+    {
+        ans = s[i - 1] - s[i];
+        cout << s[i - 1] - s[i] << endl;
+        if (ans < 0)
+        {
+            ans = ans * (-1);
+        }
+        sol += ans;
+    }
+    cout << "ans is : " << sol << endl;
 }
 
 // rough
