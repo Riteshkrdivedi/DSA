@@ -159,7 +159,7 @@ int main()
 
 
 
-     */
+
     string s = "hello";
     int n = s.size();
     int ans = 0;
@@ -175,6 +175,147 @@ int main()
         sol += ans;
     }
     cout << "ans is : " << sol << endl;
+
+*/
+
+    // ques 67  add binary
+
+    string a = "11";
+    string b = "1";
+
+    int lena = a.length();
+    cout << "length of a is :  " << lena << endl;
+    int lenb = b.length();
+    cout << "length of b is :  " << lenb << endl;
+    string newstr;
+    if (lena >= lenb)
+    {
+        int j = lenb - 1;
+        for (int i = lena - 1; i >= 0; i--)
+        {
+            int rem = 0;
+            if (j >= 0)
+            {
+                cout << a[i] << endl;
+                cout << b[j] << endl;
+                cout << a[i] + b[j] << endl;
+                if (a[i] + b[j] == 96)
+                {
+                    newstr = newstr + '0';
+                    cout << "1";
+                }
+                if (a[i] + b[j] == 97)
+                {
+                    newstr += '1';
+                    cout << "2";
+                }
+                if (a[i] + b[j] == 98)
+                {
+                    newstr += '0';
+                    rem = 1;
+                    cout << "3";
+                }
+                if (a[i] + b[j] == 99)
+                {
+                    newstr += '1';
+                    rem = 1;
+                    cout << "4";
+                }
+                j--;
+            }
+            else
+            {
+                if (a[i] == 96)
+                {
+                    newstr += '0';
+                }
+                if (a[i] == 97)
+                {
+                    newstr += '1';
+                }
+                if (a[i] == 98)
+                {
+                    newstr += '0';
+                    rem = 1;
+                }
+            }
+
+            if (i - 1 < 0)
+            {
+                cout << "here" << endl;
+                newstr += to_string(rem);
+            }
+            else
+            {
+                a[i - 1] += rem;
+            }
+
+            cout << "newstr is :" << newstr << endl;
+        }
+    }
+    else
+    {
+        int j = lena - 1;
+        for (int i = lenb - 1; i >= 0; i--)
+        {
+            int rem = 0;
+            if (j >= 0)
+            {
+                if (b[i] + a[j] == 96)
+                {
+                    newstr += '0';
+                }
+                if (b[i] + a[j] == 97)
+                {
+                    newstr += '1';
+                }
+                if (b[i] + a[j] == 98)
+                {
+                    newstr += '0';
+                    rem = 1;
+                }
+                if (b[i] + a[j] == 99)
+                {
+                    newstr += '1';
+                    rem = 1;
+                }
+                j--;
+            }
+            else
+            {
+                if (b[i] == 96)
+                {
+                    newstr += '0';
+                }
+                if (b[i] == 97)
+                {
+                    newstr += '1';
+                }
+                if (b[i] == 98)
+                {
+                    newstr += '0';
+                    rem = 1;
+                }
+            }
+            if (i - 1 < 0)
+            {
+                newstr += to_string(rem);
+            }
+            else
+            {
+                b[i - 1] += rem;
+            }
+            cout << "newstr is :" << newstr << endl;
+        }
+    }
+
+    int len = newstr.length();
+    string ans;
+    for (int k = len - 1; k >= 0; k--)
+    {
+        ans += newstr[k];
+    }
+    cout << "answer string is  " << ans;
 }
 
 // rough
