@@ -176,7 +176,7 @@ int main()
     }
     cout << "ans is : " << sol << endl;
 
-*/
+
 
     // ques 67  add binary
 
@@ -316,6 +316,73 @@ int main()
         ans += newstr[k];
     }
     cout << "answer string is  " << ans;
+
+
+
+    // better version
+    class Solution {
+public:
+    string addBinary(string a, string b) {
+        int lena = a.length();
+        int lenb = b.length();
+
+        int i = lena - 1;
+        int j = lenb - 1;
+        int carry = 0;
+        string result = "";
+
+        while (i >= 0 || j >= 0 || carry) {
+            int sum = carry;
+            if (i >= 0) {
+                sum += a[i] - '0';
+                i--;
+            }
+            if (j >= 0) {
+                sum += b[j] - '0';
+                j--;
+            }
+            carry = sum / 2;
+            result += (sum % 2) + '0';
+        }
+
+        reverse(result.begin(), result.end());
+        return result;
+    }
+};
+*/
+
+    // ques 989
+    int num[] = {2, 1, 5};
+    int k = 806;
+    string a;
+    int len = sizeof(num) / sizeof(int);
+    for (int i = 0; i < len; i++)
+    {
+        string value = to_string(num[i]);
+        a = a + value;
+    }
+    cout << "A is : " << a << endl;
+    int b = stoi(a);
+    cout << "b is : " << b << endl;
+    int c = b + k;
+    cout << "c is : " << c << endl;
+    string d = to_string(c);
+    cout << "d is : " << d << endl;
+    int size = d.size();
+    cout << "size of d: " << size << endl;
+    int answer[size];
+
+    int z = 0;
+    cout << d[z];
+    for (int j = 0; j < size; j++)
+    {
+        string v = "" + d[z];
+        cout << "value of v  " << v << endl;
+        int value = stoi(v);
+        answer[j] = value;
+        z++;
+    }
+    cout << "answer array is :" << answer;
 }
 
 // rough
