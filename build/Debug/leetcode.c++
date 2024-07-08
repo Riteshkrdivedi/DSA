@@ -471,7 +471,7 @@ public:
     }
     cout << "answer is : " << i << endl;
 
-*/
+
     // ques 1518
     int numBottles = 9;
     int numExchange = 3;
@@ -491,6 +491,41 @@ public:
         rem = x + y;
     }
     cout << "Final  ans is : " << ans << endl;
+*/
+    // ques 121
+    int prices[] = {2, 4, 1};
+    int min = prices[0];
+
+    int len = sizeof(prices) / sizeof(int);
+    int ans = 0;
+    int result = 0;
+    for (int i = 0; i < len - 1; i++)
+    {
+        if (prices[i] <= min)
+        {
+            min = prices[i];
+            cout << "  min is : " << min << endl;
+
+            int max = prices[i];
+            for (int j = i; j < len; j++)
+            {
+                if (prices[j] > max)
+                {
+                    max = prices[j];
+                    cout << " maxis : " << max << endl;
+                }
+            }
+            ans = max - min;
+            if (result < ans)
+            {
+                result = ans;
+            }
+        }
+    }
+    // cout << " final  min is : " << min << endl;
+
+    // cout << " final  max is : " << max << endl;
+    cout << "final result is : " << result << endl;
 }
 // rough
 /*class Solution
