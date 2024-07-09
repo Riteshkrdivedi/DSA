@@ -491,7 +491,7 @@ public:
         rem = x + y;
     }
     cout << "Final  ans is : " << ans << endl;
-*/
+
     // ques 121
     int prices[] = {2, 4, 1};
     int min = prices[0];
@@ -526,6 +526,47 @@ public:
 
     // cout << " final  max is : " << max << endl;
     cout << "final result is : " << result << endl;
+*/
+
+    // ques 88   merging two  sorted arrays
+    int nums1[] = {0};
+    int nums2[] = {1};
+    int m = 0;
+    int n = 1;
+    int i = 0;
+    int j = 0;
+    int k = 0;
+    int ans[m + n];
+    cout << "start" << endl;
+    while (i < m && j < n)
+    {
+        if (nums1[i] < nums2[j])
+        {
+            ans[k++] = nums1[i++];
+            cout << "for loop if " << ans[k - 1] << endl;
+        }
+        else
+        {
+            ans[k++] = nums2[j++];
+            cout << "for loop else " << ans[k - 1] << endl;
+        }
+    }
+    while (i < m)
+    {
+        ans[k++] = nums1[i++];
+        cout << "for loop i " << ans[k - 1] << endl;
+    }
+    while (j < n)
+    {
+        ans[k++] = nums2[j++];
+        cout << "for loop j" << ans[k - 1] << endl;
+    }
+    for (int z = 0; z < m + n; z++)
+    {
+        nums1[z] = ans[z];
+    }
+    cout << "final array is : " << endl;
+    cout << arrayitems(nums1, m + n) << endl;
 }
 // rough
 /*class Solution
