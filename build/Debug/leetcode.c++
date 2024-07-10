@@ -568,8 +568,21 @@ public:
     cout << "final array is : " << endl;
     cout << arrayitems(nums1, m + n) << endl;
     */
-
-    herrrrrrrrrrrrr
+// ques  283
+int nums[] = {0, 1, 0, 3, 12};
+int n = sizeof(nums) / sizeof(int);
+int j = 0;
+for (int i = 0; i < n; i++)
+{
+    if (nums[i] != 0)
+    {
+        swap(nums[i], nums[j]);
+        j++;
+    }
+}
+cout << "final array is : " << endl;
+cout << arrayitems(nums, n) << endl;
+    return 0;
 }
 // rough
 /*class Solution
