@@ -526,7 +526,7 @@ public:
 
     // cout << " final  max is : " << max << endl;
     cout << "final result is : " << result << endl;
-*/
+
 
     // ques 88   merging two  sorted arrays
     int nums1[] = {0};
@@ -567,6 +567,9 @@ public:
     }
     cout << "final array is : " << endl;
     cout << arrayitems(nums1, m + n) << endl;
+    */
+
+    herrrrrrrrrrrrr
 }
 // rough
 /*class Solution
