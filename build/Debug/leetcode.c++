@@ -567,7 +567,7 @@ public:
     }
     cout << "final array is : " << endl;
     cout << arrayitems(nums1, m + n) << endl;
-    */
+
 // ques  283
 int nums[] = {0, 1, 0, 3, 12};
 int n = sizeof(nums) / sizeof(int);
@@ -583,6 +583,66 @@ for (int i = 0; i < n; i++)
 cout << "final array is : " << endl;
 cout << arrayitems(nums, n) << endl;
     return 0;
+
+
+    // ques 189 reverse an array
+    int nums[] = {1, 2, 3, 4, 5, 6, 7};
+    int n = sizeof(nums) / sizeof(int);
+    int k = 3;
+    for (int i = 0; i < k; i++)
+    {
+        int a = nums[n - 1];
+        for (int j = n - 1; j > 0 ; j--)
+        {
+            nums[j] = nums[j - 1];
+        }
+        nums[0] = a;
+
+        cout << " array is : " << endl;
+        cout << arrayitems(nums, n) << endl;
+    }
+    cout << "final array is : " << endl;
+    cout << arrayitems(nums, n) << endl;
+
+        
+    // ques 189 reverse an array optimized method -1
+
+
+    int nums[] = {1, 2, 3, 4, 5, 6, 7};
+    int n = sizeof(nums) / sizeof(int);
+    int ans[n];
+    int k = 3;
+    int j = 0;
+    for (int i = 0; i < n; i++)
+    {
+        if ((i + k) < n)
+        {
+            ans[i + k] = nums[i];
+            cout << "final array is : " << endl;
+            cout << arrayitems(ans, n) << endl;
+        }
+        else
+        {
+            ans[j] = nums[i];
+            j++;
+            cout << "final array is : " << endl;
+            cout << arrayitems(ans, n) << endl;
+        }
+    }
+    cout << "final array is : " << endl;
+    cout << arrayitems(ans, n) << endl;
+*/
+
+ // ques 189 reverse an array optimized method -2
+     int nums[] = {1, 2, 3, 4, 5, 6, 7};
+    int n = sizeof(nums) / sizeof(int);
+         int k = 3;
+        int ans[n];
+        for(int i=0;i<n;i++){
+           ans[(i+k)%n]=nums[i];
+        }
+        cout << "final array is : " << endl;
+        cout << arrayitems(ans, n) << endl;
 }
 // rough
 /*class Solution
