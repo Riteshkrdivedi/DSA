@@ -11,6 +11,13 @@ int arrayitems(int array[], int n)
         cout << array[i] << " ,  ";
     }
 }
+int arrayitemsstring(char array[], int n)
+{
+    for (int i = 0; i < n; i++)
+    {
+        cout << array[i] << " ,  ";
+    }
+}
 
 // first occurance
 
@@ -604,7 +611,7 @@ cout << arrayitems(nums, n) << endl;
     cout << "final array is : " << endl;
     cout << arrayitems(nums, n) << endl;
 
-        
+
     // ques 189 reverse an array optimized method -1
 
 
@@ -631,7 +638,7 @@ cout << arrayitems(nums, n) << endl;
     }
     cout << "final array is : " << endl;
     cout << arrayitems(ans, n) << endl;
-*/
+
 
  // ques 189 reverse an array optimized method -2
      int nums[] = {1, 2, 3, 4, 5, 6, 7};
@@ -643,6 +650,34 @@ cout << arrayitems(nums, n) << endl;
         }
         cout << "final array is : " << endl;
         cout << arrayitems(ans, n) << endl;
+
+*/
+
+    // ques 186  reverse characters in a string
+
+    char s[] = {'h', 'e', 'l', 'l', 'o', ' ', 'w', 'o', 'r', 'l', 'd'};
+    cout << s[1] << endl;
+    int n = sizeof(s) / sizeof(char);
+    cout << "size is " << n << endl;
+    int k = 0;
+    char newarray[n];
+    for (int i = n - 1; i >= 0; i--)
+    {
+        if (s[i] == ' ')
+        {
+            int j = i + 1;
+            while (s[j] != ' ')
+            {
+                cout << "j is : " << s[j] << endl;
+                newarray[k] = s[j];
+                j++;
+                k++;
+            }
+            newarray[k] = ' ';
+        }
+    }
+    cout << "final array is : " << endl;
+    cout << arrayitemsstring(newarray, n) << endl;
 }
 // rough
 /*class Solution
