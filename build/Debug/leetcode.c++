@@ -651,7 +651,7 @@ cout << arrayitems(nums, n) << endl;
         cout << "final array is : " << endl;
         cout << arrayitems(ans, n) << endl;
 
-*/
+
 
     // ques 186  reverse characters in a string
 
@@ -678,6 +678,75 @@ cout << arrayitems(nums, n) << endl;
     }
     cout << "final array is : " << endl;
     cout << arrayitemsstring(newarray, n) << endl;
+
+
+    // ques 80
+
+    string s = "the sky is blue";
+    int n = s.size();
+    string newstring = "";
+    int j = 0;
+
+    for (int i = n - 1; i >= 0; i--)
+    {
+        if (s[i] == "")
+        {
+            j = i + 1;
+            while (s[j] != '\0')
+            {
+                newstring += s[j];
+
+                j++;
+            }
+        }
+    }
+    cout << "ans is " << endl;
+    cout << newstring;
+    return 0;
+*/
+    // ques 1750
+    string s = "aabccabba";
+    int i = 0;
+    int j = s.size() - 1;
+    int size = s.size();
+    cout << j << endl;
+    int count = 0;
+    while (i <= j)
+    {
+        cout << "i is : " << i << endl;
+        cout << "j is : " << j << endl;
+        char a = s[i];
+        cout << "a is : " << a << endl;
+
+       
+        char last = s[j];
+        if (a == last)
+        { while (a == s[i + 1])
+        {
+            i++;
+        }
+            j--;
+            i++;
+            count++;
+            cout << "count is : " << count << endl;
+
+            while (a == s[j])
+            {
+                j--;
+                count++;
+                cout << "count is : " << count << endl;
+            }
+        }
+        else
+        {
+            cout << "finalllly " << endl;
+            cout << "i is : " << i << endl;
+            cout << "count is : " << count << endl;
+            cout << "ans is :  " << size - (i  + count) << endl;
+            break;
+        }
+    }
+    // cout << 0 << endl;
 }
 // rough
 /*class Solution
