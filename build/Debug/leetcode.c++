@@ -703,7 +703,7 @@ cout << arrayitems(nums, n) << endl;
     cout << "ans is " << endl;
     cout << newstring;
     return 0;
-*/
+
     // ques 1750
     string s = "aabccabba";
     int i = 0;
@@ -718,7 +718,7 @@ cout << arrayitems(nums, n) << endl;
         char a = s[i];
         cout << "a is : " << a << endl;
 
-       
+
         char last = s[j];
         if (a == last)
         { while (a == s[i + 1])
@@ -747,6 +747,30 @@ cout << arrayitems(nums, n) << endl;
         }
     }
     // cout << 0 << endl;
+    */
+    //    ques 912
+    int nums[] = {5, 2, 3, 1};
+    ;
+
+    for (int i = 1; i < sizeof(nums) / sizeof(int); i++)
+    {
+        int temp = nums[i];
+        int j = i - 1;
+        for (; j >= 0; j--)
+        {
+            if (nums[j] > temp)
+            {
+                nums[j + 1] = nums[j];
+            }
+            else
+            {
+                break;
+            }
+        }
+        nums[j + 1] = temp;
+    }
+    cout << "final array is : " << endl;
+    cout << arrayitems(nums, 4) << endl;
 }
 // rough
 /*class Solution
