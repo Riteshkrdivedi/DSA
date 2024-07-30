@@ -15,6 +15,31 @@ int print2d(int arr[2][3])
     return 0;
 }
 
+int getpivot(int nums[], int n)
+{
+    int s = 0;
+    int e = n - 1;
+    int mid;
+    while (s < e)
+    {
+        mid = s + (e - s) / 2;
+        cout << "mid is   : " << mid << endl;
+        if (mid == 0)
+        {
+            return mid + 1;
+        }
+        if (nums[mid] > nums[0])
+        {
+            s = mid + 1;
+        }
+        else
+        {
+            e = mid;
+        }
+    }
+    return s;
+}
+
 int main()
 { /*
      int matrix[3][4] = {{1, 3, 5, 7},
@@ -90,7 +115,7 @@ int main()
     }
 
     cout << print2d(newarray) << endl;
-     */
+
 
     string s = "hello world";
     int count = 0;
@@ -113,15 +138,49 @@ int main()
                     break;
                 }
             }
-              cout << count<<endl;
+            cout << count << endl;
         }
-        if(check >1)
+        if (check > 1)
         {
             break;
         }
     }
-        cout << count;
- 
+    cout << count;
+
+    //  ques 153
+    int nums[5] = {10, 1, 10, 10, 10};
+    int n = sizeof(nums) / sizeof(nums[0]);
+    int pivot = getpivot(nums, n);
+    cout << "pivot is : " << pivot << endl;
+    if (nums[pivot] <= nums[0] && nums[pivot] <= nums[n - 1])
+    {
+        cout << "first :" << nums[pivot] << endl;
+    }
+    else if (nums[n - 1] <= nums[0] && nums[n - 1] <= nums[pivot])
+    {
+        cout << "second :" << nums[n - 1] << endl;
+    }
+    else
+    {
+        cout << "last :" << nums[0] << endl;
+    }
+       */
+    //   ques 50
+    int x = 2;
+    int n = 10;
+    float r = 1;
+    while (n > 0)
+    {
+        if (n & 1)
+        {
+            r = r * x;
+        }
+        x = x * x;
+        n = n >> 1;
+
+        cout << "hell" << endl;
+    }
+    cout << r;
 }
 
 /*class Solution {
