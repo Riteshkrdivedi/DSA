@@ -1,17 +1,28 @@
 #include <iostream>
 using namespace std;
 #include <string>
+#include <vector>
 
-int print2d(int arr[2][3])
+// int print2d(int arr[m][n], int m, int n)
+// {
+
+//     for (int i = 0; i < m; i++)
+//     {
+//         for (int j = 0; j < n; j++)
+//         {
+//             cout << arr[i][j] << " ";
+//         }
+//         cout << endl;
+//     }
+//     return 0;
+// }
+int print1d(vector<int> arr[], int n)
 {
-    for (int i = 0; i < 2; i++)
+    for (int i = 0; i < n; i++)
     {
-        for (int j = 0; j < 3; j++)
-        {
-            cout << arr[i][j] << " ";
-        }
-        cout << endl;
+        cout << arr[i] << " ";
     }
+    cout << endl;
     return 0;
 }
 
@@ -164,7 +175,7 @@ int main()
     {
         cout << "last :" << nums[0] << endl;
     }
-       */
+
     //   ques 50
     int x = 2;
     int n = 10;
@@ -181,6 +192,144 @@ int main()
         cout << "hell" << endl;
     }
     cout << r;
+
+    // ques 746
+    int cost[3] = {10, 15, 25};
+    int sum = 0;
+    int n = sizeof(cost) / sizeof(cost[0]);
+
+    int i = 0;
+    if (i >= n - 2)
+    {
+        i = 0;
+        sum += cost[i];
+    }
+    else if (i + 1 >= n - 2)
+    {
+        i = 1;
+        sum += cost[1];
+    }
+    else if (cost[i] < cost[i + 1])
+    {
+        sum += cost[i];
+        i = 0;
+    }
+    else
+    {
+        i = 1;
+        sum += cost[1];
+    }
+    cout << "sum is :" << sum << endl;
+    cout << "value if i :" << i << endl;
+    while (i <= n)
+    {
+
+        if (cost[i + 1] < cost[i + 2])
+        {
+            i = i + 1;
+        }
+        else
+        {
+            i = i + 2;
+        }
+        sum += cost[i];
+        cout << "sum is :" << sum << endl;
+        cout << "value if i :" << i << endl;
+
+        if ((n == i + 1) || (n == i + 2))
+        {
+            break;
+        }
+
+    }
+
+    cout << "final ans is :" << sum << endl;
+
+    //   ques 56
+    int intervals[4][2] = {{1, 3}, {2, 6}, {8, 10}, {15, 18}};
+    cout << intervals[0] << endl;
+
+    int n = sizeof(intervals) / sizeof(intervals[0]);
+    int merged[4][2];
+
+    merged[0] = intervals[0];
+    for (int i = 1; i < n; i++)
+    {
+        if (intervals[i][0] <= merged[i - 1][1])
+        {
+            merged[i - 1][1] = intervals[i][1];
+        }
+        else
+        {
+            merged[i] = intervals[i];
+        }
+    }
+    cout << print2d(merged, 4, 2) << endl;
+
+    //    ques 42
+    int height[12] = {0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1};
+    int n = sizeof(height) / sizeof(height[0]);
+    int x = 0;
+    int y = 1;
+    int mux;
+    int ans = 0;
+    while (y < n)
+    {
+        if (x == y)
+        {
+            y++;
+            cout << "y is :" << y << endl;
+        }
+        if (height[y] == 0)
+        {
+            y++;
+            cout << "y is :" << y << endl;
+        }
+        if (height[x] == 0)
+        {
+            x++;
+            cout << "x is :" << x << endl;
+        }
+        else
+        {
+            mux = min(height[x], height[y]) * (y - x);
+            cout << "mux  :" << mux << endl;
+            ans += mux;
+            cout << "ans  :" << ans << endl;
+            x++;
+            y++;
+        }
+    }
+    cout << "final is :" << ans << endl;
+      */
+    //  ques 436
+
+    int intervals[4][2] = {{1, 2}, {2, 3}, {3, 4}, {1, 3}};
+    int n = sizeof(intervals) / 4;
+    vector<int> ans(n);
+    cout<<n<<endl;
+    if (n == 1)
+    {
+        cout << -1 << endl;
+    }
+
+    int counter = 1;
+    for (int i = 1; i < n; i = i + 2)
+    {
+        for (int j = 0; j < n; j = j + 2)
+        {
+            if (intervals[j] >= intervals[i])
+            {
+                counter++;
+                ans.push_back(counter);
+            }
+            else
+            {
+                ans.push_back(-1);
+            }
+        }
+    }
+    cout << print1d(ans, n) << endl;
 }
 
 /*class Solution {

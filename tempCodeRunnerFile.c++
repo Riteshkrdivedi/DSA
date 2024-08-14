@@ -1,5 +1,8 @@
-if (mid * mid < x && (mid + 1) * (mid + 1) > x)
-      // {
-      //    cout << "nearest ans :" << mid << endl;
-      //    break;
-      // }
+int print1d(vector<int> arr[], int n)
+// {
+//     for (int i = 0; i < n; i++)
+//     {
+//         cout << arr[i] << " ";
+//     }
+//     cout << endl;
+// }
