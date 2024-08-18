@@ -72,8 +72,10 @@ int main()
     }
 
     cout << low;
- */
-    // one more
+
+    // one more way
+
+
     vector<int> nums = {1, 6, 1};
     int k = 3;
     int n = nums.size();
@@ -92,4 +94,111 @@ int main()
     nth_element(differences.begin(), differences.begin() + k - 1, differences.end());
 
     cout << differences[k - 1] << endl;
+
+
+    // 3 sum
+    vector<int> nums = {0,0,0,0};
+    int n = nums.size();
+    vector<vector<int>> ans;
+    sort(nums.begin(), nums.end());
+
+    for (int i = 0; i < n - 2; i++)
+    {
+        int s = i + 1;
+        int e = n - 1;
+        cout << i << endl;
+        cout << s << endl;
+        cout << e << endl;
+        cout << endl;
+        if (i > 0)
+        {
+            if (nums[i] == nums[i - 1])
+            {
+                i++;
+            }
+        }
+        while (s < e)
+
+        {
+            if (nums[s] == nums[s + 1] && nums[e] == nums[e - 1])
+            {
+                s++;
+                e--;
+            }
+            if (nums[i] + nums[s] + nums[e] == 0)
+            {
+                ans.push_back({i + 1, s + 1, e + 1});
+                cout << nums[i] << endl;
+                cout << nums[s] << endl;
+                cout << nums[e] << endl;
+                cout << endl;
+                s++;
+                e--;
+            }
+            else if (nums[i] + nums[s] + nums[e] > 0)
+            {
+                e--;
+                cout << "else if" << endl;
+            }
+            else
+            {
+                s++;
+                cout << "else" << endl;
+            }
+        }
+        // if (nums[i] == nums[i + 1])
+        // {
+        //     i++;
+        // }
+    }
+    cout << ans.size();
+    return 0;
+
+*/
+    // uglu number
+    int n = 140;
+    if (n == 1)
+    {
+        cout << 1;
+    }
+    int count = 1;
+    int i = 2;
+    int temp = i;
+    while (count <= n)
+    {
+        // cout << i << endl;
+        // int temp=i;
+        cout << "temp is  :" << temp << endl;
+        if (temp % 2 == 0)
+        {
+            temp = temp / 2;
+        }
+        else if (temp % 3 == 0)
+        {
+            temp = temp / 3;
+        }
+        else if (temp % 5 == 0)
+        {
+            temp = temp / 5;
+        }
+        else if (temp == 1)
+        {
+            count++;
+            cout << "count is  : " << count << endl;
+            //  break;
+            cout << endl;
+            i++;
+            temp = i;
+            if (count == n)
+            {
+                break;
+            }
+        }
+        else
+        {
+            i++;
+            temp = i;
+        }
+    }
+    cout << i - 1 << endl;
 }
