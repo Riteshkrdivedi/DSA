@@ -154,7 +154,7 @@ int main()
     cout << ans.size();
     return 0;
 
-*/
+
     // uglu number
     int n = 140;
     if (n == 1)
@@ -201,4 +201,33 @@ int main()
         }
     }
     cout << i - 1 << endl;
+*/
+
+    //
+    int n;
+    cout << "n   :";
+    cin >> n;
+    cout << endl;
+    int k;
+    cout << "k   :";
+    cin >> k;
+    cout << endl;
+    vector<int> arr;
+    for (int i = 1; i <= n; i++)
+    {
+        arr.push_back(i);
+    }
+    int j = 0;
+    int num = 0;
+    while (arr.size() > 1)
+    {
+        int size = arr.size();
+        cout << "size  :" << size << endl;
+        j = (num) % size;
+        cout << "j  :" << j << endl;
+        num = (j + k - 1) % size;
+        cout << "index  :" << num << endl;
+        arr.erase(arr.begin() + num);
+    }
+    cout << arr[0];
 }
