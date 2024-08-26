@@ -201,7 +201,7 @@ int main()
         }
     }
     cout << i - 1 << endl;
-*/
+
 
     //
     int n;
@@ -230,4 +230,41 @@ int main()
         arr.erase(arr.begin() + num);
     }
     cout << arr[0];
+*/
+
+    //
+    int n;
+    cout << "enter n  :";
+    cin >> n;
+    vector<int> num;
+    for (int i = 1; i <= n; i++)
+    {
+        num.push_back(i);
+    }
+    while (num.size() > 1)
+    {
+        int x = num.size();
+        if (x == 2)
+        {
+            cout <<"a"<< num[1] << endl;
+            break;
+        }
+        for (int i = 0; i < x-1; i = i + 1)
+        {
+            cout <<"b"<< num[i] << endl;
+            num.erase(num.begin() + i);
+        }
+        int y = num.size();
+        if (y == 2)
+        {
+            cout<<"c" << num[0] << endl;
+            break;
+        }
+        for (int i = y - 1; i >= 0; i = i - 1)
+        {
+            cout<<"d" << num[i] << endl;
+            num.erase(num.begin() + i-1);
+        }
+    }
+    cout << "end";
 }
