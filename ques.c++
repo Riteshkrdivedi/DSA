@@ -14,6 +14,26 @@ using namespace std;
 //     cout << endl;
 // }
 
+// sum of array
+int getsum(int *arr, int size)
+{
+    if (size == 0)
+    {
+        return 0;
+    }
+    if (size == 1)
+    {
+        cout << "inside " << arr[0] << endl;
+        return arr[0];
+    }
+    int remaining_sum = getsum(arr + 1, size - 1);
+    cout << "remaining sum  :" << remaining_sum << endl;
+    int sum = arr[0] + remaining_sum;
+    cout << "arr[0]  :" << arr[0] << endl;
+    cout << "sum  :" << sum << endl;
+    return sum;
+}
+
 int main()
 {
     /* vector<int> nums = {1, 6, 1};
@@ -230,7 +250,7 @@ int main()
         arr.erase(arr.begin() + num);
     }
     cout << arr[0];
-*/
+
 
     //
     int n;
@@ -267,4 +287,12 @@ int main()
         }
     }
     cout << "end";
+
+    */
+
+    int arr[] = {1, 2, 3, 4, 5};
+    int size = 5;
+    int sum = getsum(arr, size);
+    cout << sum;
+    return 0;
 }
