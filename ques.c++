@@ -289,10 +289,30 @@ int main()
     cout << "end";
 
     */
+    vector<int> arr = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -15, -15};
+    int k = 5;
+    for (int i = 0; i < arr.size(); i++)
+    {
+        cout << "size is :" << arr.size() << endl;
 
-    int arr[] = {1, 2, 3, 4, 5};
-    int size = 5;
-    int sum = getsum(arr, size);
-    cout << sum;
-    return 0;
+        cout << "i  :" << arr[i] << endl;
+        for (int j = i + 1; j < arr.size(); j++)
+        {
+            cout << "j  :" << arr[j] << endl;
+            if ((arr[i] + arr[j]) >= k && (arr[i] + arr[j]) >= k * (-1) && (arr[i] + arr[j]) % k == 0)
+            {
+                cout << "j erased  :" << arr[j] << endl;
+                arr.erase(arr.begin() + j);
+                cout << "i erased :" << arr[i] << endl;
+                arr.erase(arr.begin() + i);
+                i--;
+                break;
+            }
+        }
+    }
+    if (arr.size() == 0)
+    {
+        cout << " true";
+    }
+    cout << "false";
 }
